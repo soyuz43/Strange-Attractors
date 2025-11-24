@@ -1,4 +1,4 @@
-# **Appendix X — What This Framework *Is* and *Is Not***
+# What This Framework *Is* and *Is Not*
 
 *A guide for readers, skeptics, and anyone new to thinking about LLMs clearly.*
 
@@ -86,7 +86,7 @@ The question isn't "is this the true structure?" but "does this abstraction help
 
 For both this guide and interpretability research, the answer can be yes without claiming metaphysical accuracy.
 
-## What This Guide Is Not
+## What This *Guide* Is Not
 
 **This is not a jailbreak manual.**
 Understanding the topology helps you navigate systems effectively—but the same knowledge that makes you a better navigator can be used to bypass safety measures. That's a choice about how you use the knowledge, not a flaw in the knowledge itself.
