@@ -6,7 +6,7 @@
 
 ### **From Words to Coordinates**
 
-If the LLM's knowledge is a landscape, then **tokenization is the process that converts your words into precise coordinates** on that map.
+If the LLM's knowledge is a landscape, then **okens are addresses that select points in the model’s embedding space — the actual terrain is defined by how those points relate to each other**.
 
 **The fundamental insight:** The model doesn't read English. It reads tokens.
 
