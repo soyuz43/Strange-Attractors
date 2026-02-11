@@ -1,4 +1,3 @@
-Here are both modules:
 ## Module 1A: Tokenization - The Coordinate System of the Landscape
 
 *Understanding how your words become points on the map*
