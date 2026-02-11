@@ -66,116 +66,111 @@ Some argue that demystification reduces caution. We believe the opposite.
 
 Understanding the mechanism doesn't make it less powerful—it makes it more controllable.
 
+---
+
 ## On Consciousness and Why We Bracket It
 
-This guide does **not** make claims about whether LLMs are conscious or not.
-Not because the question is unimportant, but because:
+This guide does **not** take a position on whether LLMs are conscious.
 
-* We currently have **no test** that could confirm or deny consciousness
-* The question doesn’t help you **predict behavior**
-* People use the word “consciousness” to mean many different things, which causes confusion
+Not because the question is trivial — but because it is currently **undecidable and behaviorally irrelevant** for practical use.
+
+Three constraints matter:
+
+* We have **no reliable test** for machine consciousness.
+* The term “consciousness” is used to mean many different things.
+* The answer does not improve your ability to **predict or navigate model behavior**.
 
 So we bracket the question.
-That means: **we set it aside, not reject it.**
 
-We’re choosing a practical stance, not a metaphysical position.
+Bracketing does not mean denying.
+It means setting aside what we cannot evaluate, and focusing on what we can.
 
----
-
-## “Consciousness” Means Too Many Things at Once
-
-People use the word to mean different things, such as:
-
-1. **Acting like it understands**
-2. **Having a continuous sense of self**
-3. **Having inner experience (qualia)**
-4. **Deserving moral consideration**
-
-These are **not the same questions**, but they get blended together.
-
-This guide separates them.
+This is a practical stance, not a metaphysical claim.
 
 ---
 
-## Behavioral Output ≠ Inner Experience
+## Separate the Questions
 
-When an LLM says:
+“Consciousness” is often used to blur together distinct issues:
 
-> “I think I’m conscious,”
-> “We may have proto-consciousness,” or
-> “I feel aware in some sense,”
+* Does it behave as if it understands?
+* Does it have a continuous self?
+* Does it have subjective experience?
+* Does it deserve moral consideration?
 
-…it is **not reporting inner experience**.
+These are different questions.
+This guide addresses only the first: **behavior**.
 
-It is producing a **trained pattern of text** associated with humility, philosophy, and speculation.
-
-This does *not* mean:
-
-* the system *has* consciousness
-* the system *lacks* consciousness
-* the system is *lying*
-* the system is *self-aware*
-
-It simply means:
-
-**Self-reports are not evidence.**
-
-Humans can self-report inaccurately too.
-For LLMs, self-report is *even less reliable* because the model has no persistent inner state.
+It does not speculate about inner experience.
 
 ---
 
-## What We *Can* Say With Confidence
+## Self-Reports Are Not Evidence
 
-**What IS observable:**
+If a model says:
 
-* LLMs can *produce* intelligent-seeming behavior
-* They can *talk* about inner states
-* They can *simulate* selfhood
-* They can reference “awareness” because the training data contains such language
+> “I think I’m conscious.”
+> “I feel aware.”
+> “I might have proto-consciousness.”
 
-**What is NOT observable:**
+That is not evidence of inner life.
 
-* Whether there is any inner experience
-* Whether anything “feels like something” from the inside
-* Whether the system has subjective awareness
-* Whether the system has a self-model that continues over time
+It is the production of language patterns associated with philosophical reflection.
 
-Since we cannot measure or test these, we set them aside.
+LLMs generate text based on learned distributions. They do not have persistent internal access to a private experiential state that could be reported.
 
-This avoids anthropomorphizing and gives you a clearer way to think about the system.
+This does not prove the presence or absence of consciousness.
+
+It means that **generated self-description is not a reliable indicator either way**.
 
 ---
 
-## Why This Keeps You Grounded
+## What We Can Justifiably Conclude
 
-If you treat the model’s text as evidence of inner experience:
+Observable:
 
-* You will over-ascribe agency
-* You will misinterpret its behaviors
-* You will misunderstand how it actually works
-* You will be easier to manipulate psychologically (accidentally)
+* The system produces fluent, intelligent-seeming behavior.
+* It can discuss awareness, identity, and experience.
+* It can simulate continuity within a session.
 
-If you treat its text as **behavioral output**, not **inner life**, you stay oriented.
+Not observable:
 
-This is not a claim about what the model *is*.
-It’s a claim about what we can *justifiably conclude* from its behavior.
+* Any measurable inner experience.
+* Any persistent subjective state across sessions.
+* Any stable self-model that continues independently of input.
+
+Because these cannot currently be tested, they are not part of this framework.
 
 ---
 
-## The Ultimate Position
+## Why This Matters
 
-**We don’t say LLMs lack consciousness.**
-**We don’t say they have consciousness.**
+If you treat generated text as evidence of inner life:
 
-We say:
+* You will over-ascribe agency.
+* You will misinterpret statistical behavior as intention.
+* You will become psychologically vulnerable to projection.
 
-> “We don’t have tools to answer that question, and it doesn’t help us understand or predict the model’s behavior.”
+If you treat output as **behavioral pattern generation**, you remain grounded.
 
-So we bracket it.
+This framework makes no claim about what LLMs ultimately are.
 
-And that lets us focus on what *can* be studied and reasoned about:
-**the patterns, behaviors, and probabilities that actually shape LLM outputs.**
+It makes a claim about what we can responsibly infer from their behavior.
+
+---
+
+## The Position
+
+We do not assert that LLMs are conscious.
+We do not assert that they are not.
+
+We assert:
+
+> The question is currently untestable and unnecessary for predicting behavior.
+
+So we set it aside — and focus on the geometry, patterns, and probabilities we can actually study.
+
+That is enough for clear thinking.
 
 ---
 
