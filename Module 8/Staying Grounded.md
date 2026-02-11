@@ -1,9 +1,3 @@
-Exactly — that’s the right instinct. “Mode” implies a discrete switch inside the system, and that’s misleading.
-A more faithful description is that *your wording changes which parts of the probability landscape the model draws from*.
-Let’s rewrite your **Staying Grounded** section in that calmer, precise style you want—short paragraphs, plain language, no “modes,” no “activation,” no philosophy jargon:
-
----
-
 ## Staying Grounded
 
 Large language models don’t think, remember, or plan.
