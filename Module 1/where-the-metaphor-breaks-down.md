@@ -1,4 +1,4 @@
-## Module X: When the Metaphor Breaks Down
+## Module 1B: When the Metaphor Breaks Down
 
 *Understanding the limits of our topological model*
 
@@ -101,6 +101,56 @@ The topological metaphor serves you well for 95% of interactions, but all models
 **Example:** "The bass guitar" and "the bass fish" start at different coordinates, but "bass" alone might be ambiguous territory.
 
 **When this matters:** When small phrasing changes produce dramatically different outputs.
+
+---
+
+### **7. There Is No Single Global Landscape**
+
+**Metaphor says:** The model has one fixed terrain that you are navigating.  
+**Reality check:** The effective landscape depends on decoding strategy, system prompts, and runtime parameters.
+
+**What actually happens:**
+- **Temperature and sampling methods** (top-k, top-p) change which paths are accessible
+- **System prompts** add invisible boundary conditions that reshape probabilities
+- **Logit biasing or safety layers** can create artificial walls or tunnels
+- **Different inference settings** alter how steep or smooth the terrain feels
+
+**Example:**  
+At low temperature, "The capital of France is" almost deterministically rolls into "Paris."  
+At higher temperature, the terrain flattens, and alternative paths become reachable.  
+Switching to a differently aligned version of the same model can introduce entirely new “cliffs” around sensitive topics.
+
+**When this matters:**  
+When you notice the same prompt behaving differently across versions, platforms, or parameter settings. You are not exploring the same landscape—you are navigating different geometries shaped by runtime constraints.
+
+---
+
+### **Practical Implication: The Landscape Is Conditional**
+
+The terrain is not just the frozen weights of the model. It is:
+
+> **Model weights + context window + system prompts + decoding policy**
+
+Change any of those, and you are effectively stepping into a new region of probability space.
+
+This explains:
+- Why results differ between local and hosted models  
+- Why temperature adjustments change personality and coherence  
+- Why two “identical” models may feel fundamentally different  
+
+The metaphor still works—but only if you remember that the terrain is conditional on how you are querying it.
+
+---
+
+### **The Deeper Lesson**
+
+There is no single master map. There are many conditional landscapes layered over the same parameter space.
+
+Understanding this prevents a subtle mistake:  
+Believing you have fully mapped the system when you have only explored one decoding regime.
+
+When outputs change, it is not evidence of mood or intention.  
+It is evidence that the geometry you are navigating has changed.
 
 ---
 
