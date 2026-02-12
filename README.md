@@ -20,7 +20,7 @@ This isn't poetry. It's a boundary condition: Any claim about what the model is 
 
 These feelings are valid responses to a genuinely strange phenomenon. 
 
-(And don't worry—when I say “topology,” I just mean the *shape* of how the model moves through _space_ of possible responses.)
+(And don't worry—when I say “topology,” I just mean the *shape* of how the model moves through space of possible responses.)
 
 ## There's a Better Way to Understand What's Happening
 
