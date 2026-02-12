@@ -2,7 +2,8 @@
 
 _A Field Guide to the Topology of Minds That Don't Exist_
 
-→ “You’re not talking to a mind. You’re sculpting curvature in token space.”
+→ "You're not talking to a mind. You're navigating a landscape of possible responses.
+This isn't poetry. It's a boundary condition: Any claim about what the model is doing must cash out in terms of its actual dynamics. If you can't point to the trajectory through activation space, you're not explaining the model—you're narrating your own intuitions."
 
 ## Does This Sound Familiar?
 
