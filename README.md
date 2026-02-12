@@ -7,9 +7,13 @@ This isn't poetry. It's a boundary condition: Any claim about what the model is 
 
 ## Does This Sound Familiar?
 
+
 • You've seen the model switch personalities completely based on your prompt and wondered what's really happening
+
 • You've had conversations with an LLM that felt genuinely insightful, then wondered: "Wait, is it actually thinking?"
+
 • You’ve tried to “understand” LLMs and only found mysticism or 400-page math tomes
+
 • You swing between thinking they’re godlike and thinking they’re just spicy autocomplete
 
 **Then this guide is for you.**
