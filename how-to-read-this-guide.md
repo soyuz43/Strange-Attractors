@@ -1,5 +1,8 @@
 # How to Read This Guide
 
+> The goal isn't completeness—it's a usable mental model that makes accurate predictions about behavior.
+>
+
 This guide uses spatial metaphors to explain LLM behavior—thinking of models as high-dimensional probability landscapes you navigate rather than minds you converse with. This document helps you understand what to expect, what this approach covers (and doesn't), and how to get the most value based on who you are.
 
 *Jump to: [Non-Technical](#for-non-technical-readers) | [Researchers](#for-researchers-and-engineers) | [Companies](#for-companies-why-this-mental-model-protects-your-users-and-you) | [Contested Questions](#on-contested-questions)*
