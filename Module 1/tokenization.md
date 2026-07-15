@@ -1,210 +1,348 @@
-## Module 1A: Tokenization - The Coordinate System of the Landscape
 
-*Understanding how your words become points on the map*
 
----
+# **Module 1A: Tokenization — How Your Words Become Coordinates**
 
-### **From Words to Coordinates**
-
-If the LLM's knowledge is a landscape, then **okens are addresses that select points in the model’s embedding space — the actual terrain is defined by how those points relate to each other**.
-
-**The fundamental insight:** The model doesn't read English. It reads tokens.
-
-### **What Are Tokens?**
-
-Tokens are the fundamental units the model actually processes. They're not quite words, not quite characters—they're chunks of text determined by the model's training.
-
-**Examples of tokenization:**
-- "Hello world!" → ["Hello", " world", "!"]
-- "I'm happy" → ["I", "'m", " happy"]
-- "Transformer" → ["Transform", "er"] (in some tokenizers)
-
-**Try it yourself:** Use a tokenizer tool (like OpenAI's tokenizer) to see how your text gets split.
+*The missing link between your prompt and the landscape.*
 
 ---
 
-### **Why Tokenization Matters for Navigation**
+## **Last Time We Learned...**
 
-#### **1. Granularity of Movement**
+In Module 1, we replaced the idea of "talking to a mind" with something more useful:
 
-**Words are too coarse:** If the model operated on whole words, it would have limited flexibility.  
-**Tokens are just right:** Tokenization allows the model to handle rare words, neologisms, and complex morphology.
+> You are navigating a landscape of possible responses.
 
-**Example:** "Uncharacteristically" might be one word to you, but the model sees ["Un", "character", "istically"]—three separate moves across the landscape.
+But that raises an obvious question.
 
-#### **2. Coordinate Precision**
+**How does a sentence you type become a location on that landscape?**
 
-Small changes in tokenization can land you in completely different territories:
-
-```
-"Let's talk about AI safety" → Different coordinates than
-"Let's discuss AI safety"
-```
-
-Even though these mean similar things to humans, they start the marble in different positions.
-
-#### **3. The Token Limit Problem**
-
-The context window is measured in **tokens**, not words. This means:
-
-- Long words use more tokens
-- Some languages are more token-efficient than others
-- You can "run out of map" if your conversation gets too long
+The answer is surprisingly strange.
 
 ---
 
-### **Common Tokenization Surprises**
+## **The First Weird Fact**
 
-#### **Unexpected Splits**
+> **The model never reads English.**
 
-```
-"Supercalifragilisticexpialidocious" → 
-["Super", "cal", "ifrag", "il", "istic", "exp", "ial", "id", "ocious"]
-```
+Not even for a moment.
 
-The model has to navigate this multi-step path, and might get lost along the way.
+It reads **tokens**.
 
-#### **Space Matters**
+The instant your message reaches the model, your words are converted into an entirely different representation.
 
-```
-"word" vs " word" (with leading space)
-```
-
-These can be different tokens! The model treats them as separate coordinates.
-
-#### **Punctuation as Landmarks**
-
-```
-"Let's eat, grandma!" vs "Let's eat grandma!"
-```
-
-The comma token creates a crucial navigation aid that keeps you out of the "cannibalism" valley.
+For the rest of the forward pass, your original text is gone.
 
 ---
 
-### **Practical Tokenization Strategies**
+## **What Are Tokens?**
 
-#### **1. Know Your Token Count**
+A token is simply one piece of text from the model's vocabulary.
 
-Always be aware of how many tokens you're using:
-- Most models have context windows of 4K-128K tokens
-- You can check token counts using your model's tokenizer
-- Leave room for the response!
+Sometimes that's an entire word.
 
-#### **2. Rephrase for Better Tokenization**
+Sometimes it's only part of one.
 
-Instead of: "I need help with interdepartmental coordination" (5+ tokens)  
-Try: "Help me coordinate between departments" (fewer tokens, clearer meaning)
-
-#### **3. Use Consistent Terminology**
-
-If you establish that you'll use "LLM" instead of "large language model," stick with it. You're creating a well-worn path between those coordinates.
-
-#### **4. Beware of Tokenization Drift**
-
-In long conversations, the same concept might get tokenized differently as context changes. If you notice confusion, re-anchor key terms.
-
----
-
-### **Tokenization and the Topological Metaphor**
-
-| Tokenization Concept | In the Metaphor |
-|---------------------|-----------------|
-| **Vocabulary size** | The resolution of the map |
-| **Token sequences** | The path coordinates |
-| **Context window** | The visible area of the map |
-| **Embeddings** | The actual coordinates in high-dimensional space |
-| **Attention** | Which parts of the path influence the next step |
-
-### **The Coordinate Transformation Process**
+Examples:
 
 ```
-Your Words → Tokens → Embeddings → Coordinates on Landscape
+Hello world!
 ```
 
-**Critical insight:** The model never sees your actual words. It sees vectors (embeddings) that represent the semantic meaning of those tokens.
-
-This is why synonyms often work similarly—they map to nearby coordinates. And why homonyms can cause confusion—they map to the same coordinates but in different contexts.
-
----
-
-### **Experiments with Tokenization**
-
-#### **🧪 Experiment 1: Token Efficiency**
-
-Take three ways of saying the same thing and compare their token counts:
-
-1. "Can you assist me with comprehending this intricate textual passage?"
-2. "Help me understand this complex text."
-3. "Explain this hard passage."
-
-**Observe:** Which is most token-efficient? Does the most efficient phrasing produce the best results?
-
-#### **🧪 Experiment 2: The Space Character**
-
-Test these pairs:
-- "red car" vs "redcar"
-- "I'm here" vs "I'm  here" (two spaces)
-- "word" vs " word"
-
-**Observe:** How does subtle spacing affect the output? You'll find that tokenization makes the model surprisingly sensitive to these details.
-
----
-
-### **When Tokenization Causes Problems**
-
-#### **Problem: Tokenization Artifacts**
-
-Sometimes the tokenizer creates weird splits that confuse the model:
+might become
 
 ```
-"JavaScript" → ["Java", "Script"]
+["Hello", " world", "!"]
 ```
 
-The model might start talking about coffee (Java) instead of programming.
+while
 
-**Solution:** Rephrase or use hyphens: "Java-Script" might tokenize better.
+```
+I'm happy
+```
 
-#### **Problem: Language Imbalance**
+might become
 
-Some languages require more tokens per concept than others. This means non-English speakers get less "reasoning space" in the context window.
+```
+["I", "'m", " happy"]
+```
 
-**Solution:** Be aware of this limitation when working in token-inefficient languages.
+and a rare word might become
 
-#### **Problem: Technical Terminology**
+```
+["un", "character", "istically"]
+```
 
-New technical terms often tokenize poorly because they weren't in the training data.
+There is nothing magical about where these splits occur.
 
-**Solution:** Define terms explicitly or use more common synonyms.
-
----
-
-### **Advanced: Subword Tokenization Explained**
-
-Most modern LLMs use **Byte Pair Encoding (BPE)** or similar approaches:
-
-1. Start with individual characters
-2. Find the most common pairs, merge them into tokens
-3. Repeat until you have the desired vocabulary size
-
-This explains why:
-- Common words are single tokens
-- Rare words split into subwords
-- The model can handle words it's never seen
-
-### **Key Takeaways**
-
-1. **Tokens are the model's native language**—everything else is translation
-2. **Token efficiency affects performance**—more tokens means less reasoning space
-3. **Small phrasing changes matter** because they change the starting coordinates
-4. **Understand your tokenizer** to become a better navigator
-
-### **Coming Next**
-
-Now that you understand how your words become coordinates, we'll explore how training carved this landscape in Module 2.
-
-**Remember:** Master navigators don't just know the terrain—they understand how their movements get translated into coordinates. Tokenization is that translation system.
+They're chosen during tokenizer construction because they make the language statistically efficient to represent.
 
 ---
 
-Both modules maintain the guide's excellent balance of accessibility and depth while providing practical, actionable understanding. The "when the metaphor breaks down" module is particularly valuable for preventing over-reliance on the simplified model.
+## **Then Something Even Stranger Happens**
+
+The tokens don't stay as text.
+
+Each token is immediately replaced by a vector.
+
+Conceptually, the pipeline looks like this:
+
+```
+Your sentence
+
+↓
+
+Tokenizer
+
+↓
+
+Token IDs
+
+↓
+
+Embedding lookup
+
+↓
+
+Vectors
+
+↓
+
+Transformer
+```
+
+Notice what disappeared.
+
+Your words.
+
+From this point onward the model manipulates **numbers**, not language.
+
+Every layer of the transformer operates entirely on vectors.
+
+This is one of the most important facts about modern language models.
+
+---
+
+## **Coordinates, Not Definitions**
+
+Back in Module 1 we imagined dropping a marble somewhere on a landscape.
+
+Now we can be more precise.
+
+Your prompt doesn't become "meaning."
+
+It becomes **coordinates.**
+
+The embedding vectors determine where computation begins.
+
+The transformer then repeatedly transforms those vectors until it predicts the next token.
+
+The marble isn't rolling through English.
+
+It's moving through a very high-dimensional geometric space.
+
+---
+
+## **Why Small Wording Changes Matter**
+
+Because changing words changes tokens.
+
+Changing tokens changes vectors.
+
+Changing vectors changes the initial coordinates.
+
+Most of the time those coordinates are nearby.
+
+Sometimes they aren't.
+
+Even two sentences that mean almost the same thing to a person may begin from measurably different locations in the model's representation space.
+
+That doesn't guarantee dramatically different outputs—but it changes the initial conditions of the computation.
+
+---
+
+## **Context Is Part of the Coordinates**
+
+The model never processes a single sentence in isolation.
+
+Every token currently visible in the context window contributes to the starting state.
+
+That means your prompt isn't just:
+
+> "Explain transformers."
+
+It's really something closer to:
+
+```
+Everything already in the conversation
+
++
+
+Explain transformers.
+```
+
+The model computes over all of it simultaneously.
+
+That's why reminding the model of important information often helps.
+
+You're changing the coordinates from which generation begins.
+
+---
+
+## **Why Tokenization Exists**
+
+You might wonder:
+
+> Why not just use words?
+
+Because language doesn't cooperate.
+
+New words appear constantly.
+
+People invent names.
+
+They misspell things.
+
+They mix languages.
+
+If models only understood complete words, every unfamiliar word would become impossible to process.
+
+Instead, tokenization breaks language into reusable pieces.
+
+That lets the model understand words it has never seen before by combining familiar components.
+
+---
+
+## **Experiments**
+
+### **Experiment 1**
+
+Open a tokenizer visualizer.
+
+Type:
+
+```
+Artificial intelligence
+```
+
+Now type:
+
+```
+AI
+```
+
+Notice that the model sees completely different token sequences even though the meanings are closely related.
+
+---
+
+### **Experiment 2**
+
+Try several different ways of asking exactly the same question.
+
+```
+Explain quantum mechanics.
+
+Help me understand quantum mechanics.
+
+Teach me quantum mechanics.
+```
+
+The meanings are similar.
+
+The coordinates are not identical.
+
+Observe how the responses shift.
+
+---
+
+## **A Common Misunderstanding**
+
+People often imagine that the model first understands language and then reasons about it.
+
+The actual order is almost the opposite.
+
+```
+Words
+
+↓
+
+Tokens
+
+↓
+
+Vectors
+
+↓
+
+Transformer computation
+
+↓
+
+Predicted token
+
+↓
+
+Words again
+```
+
+Language only exists at the very beginning and the very end.
+
+Everything in the middle is geometry.
+
+---
+
+## **How This Fits the Landscape**
+
+Our metaphor is now a little more complete.
+
+| Concept        | Landscape metaphor                                   |
+| -------------- | ---------------------------------------------------- |
+| Tokens         | Addresses                                            |
+| Embeddings     | Coordinates                                          |
+| Context window | Starting region                                      |
+| Transformer    | The dynamics that determine where the path goes next |
+| Generated text | The trail left by the marble                         |
+
+Notice that **the coordinates are not the terrain.**
+
+They simply determine where navigation begins.
+
+The terrain is still defined by the learned parameters of the model.
+
+---
+
+## **The Key Insight**
+
+Module 1 taught you that you aren't talking to a mind.
+
+This module adds something equally important:
+
+> **You aren't even talking to language.**
+
+Your words survive for only an instant.
+
+Almost immediately they become geometry.
+
+Once that happens, everything the model does is computation over vectors until those vectors are translated back into words for you to read.
+
+---
+
+## **Before You Continue**
+
+At this point you have a useful mental model.
+
+It is also an incomplete one.
+
+That is intentional.
+
+Like every scientific model, the landscape metaphor explains many observations while hiding others. If you mistake it for literal reality, it will eventually mislead you.
+
+The next module exists to prevent exactly that mistake.
+
+It explains where this metaphor begins to fail, what those failures teach us about transformer architectures, and why understanding the limits of a model is just as important as understanding where it succeeds.
+
+**Do not skip it.**
+
+If Module 1 taught you **how to think** about language models, the next module teaches you **how not to overthink** them.
+
+Only after understanding both the power **and** the limits of the landscape metaphor should you move on to how training actually creates that landscape.
+
