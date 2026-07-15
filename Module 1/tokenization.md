@@ -214,43 +214,59 @@ That lets the model understand words it has never seen before by combining famil
 
 ## **Experiments**
 
-### **Experiment 1**
-
-Open a tokenizer visualizer.
-
-Type:
-
-```
-Artificial intelligence
-```
-
-Now type:
-
-```
-AI
-```
-
-Notice that the model sees completely different token sequences even though the meanings are closely related.
-
 ---
 
-### **Experiment 2**
+## 🧪 Quick Lab: See the Coordinates Yourself
 
-Try several different ways of asking exactly the same question.
+Before reading further, spend two minutes looking at how a tokenizer actually sees your text.
+
+**Try one or both of these:**
+
+- OpenAI Tokenizer  
+  https://platform.openai.com/tokenizer
+
+- Tiktokenizer (community visualizer)  
+  https://tiktokenizer.vercel.app/
+
+Paste in a few sentences and watch how they split into tokens.
+
+### Try these examples
 
 ```
-Explain quantum mechanics.
+The transformer learned language.
 
-Help me understand quantum mechanics.
+The transformer learned to write code.
 
-Teach me quantum mechanics.
+I'm happy.
+
+I am happy.
+
+Let's eat, grandma!
+
+Let's eat grandma!
+
+Supercalifragilisticexpialidocious
 ```
 
-The meanings are similar.
+### Questions to ask yourself
 
-The coordinates are not identical.
+- Which words stay intact?
+- Which words get split into multiple tokens?
+- How many tokens does each sentence use?
+- Which changes surprised you?
+- Which changes are invisible to a human reader but obvious to the tokenizer?
 
-Observe how the responses shift.
+### The important lesson
+
+The model never receives your original sentence.
+
+It receives a sequence of tokens.
+
+Everything the model does—attention, prediction, reasoning, generation—starts from that token sequence.
+
+Understanding tokenization isn't just learning a preprocessing step.
+
+It's learning the coordinate system that lets you place the marble on the landscape.
 
 ---
 
