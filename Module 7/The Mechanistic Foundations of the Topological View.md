@@ -4,8 +4,10 @@
 
 It is for the student who asks, "Yes, but is this *really* what's happening, or just a pretty story?"
 
-The topological view is not a metaphor. It is a direct description of the model's computational reality. Below are the mechanistic priors that it is based on.
+The topological view is a metaphor. It is a NOT a direct description of the model's computational reality.
 
+
+Here are some concrete examples of how we believe the metaphor can be applied.
 ---
 
 #### **1. The "Space" is a Mathematical Reality**
