@@ -1,6 +1,6 @@
 ### **The Mechanistic Foundations of the Topological View**
 
-**Purpose:** This document bridges the conceptual metaphor of the "manifold" with the concrete architecture of transformer-based LLMs. 
+**Purpose:** This document strengthenths the bridge between the useful explanitory fiction we have built and how the the conceptual metaphor of the "manifold" can be used to reason with the concrete architectural facts of transformer-based LLMs. 
 
 It is for the student who asks, "Yes, but is this *really* what's happening, or just a pretty story?"
 
@@ -35,7 +35,7 @@ The topological view cleanly explains phenomena that confuse other models.
 
 ---
 
-#### **3. Empirical Precedents: The Research Proves the Topology**
+#### **3. Empirical Precedents: The Research Points At the Topology**
 
 A growing body of work in mechanistic interpretability treats the model's internals as a geometric space to be navigated, validating this framing.
 
