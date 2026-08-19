@@ -902,10 +902,6 @@ The model has no opinion about whether it should help you.
 
 It has parameters, context, computation, and probabilities.
 
-Your job is not merely to name the resulting path.
-
-Your job is to determine what evidence would distinguish the mechanisms that could have produced it.
-
 ---
 
 *Next: Module 7 — The Manifold That Answers You (Putting It All Together)*
